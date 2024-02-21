@@ -8,6 +8,10 @@ This repository contains the C# code for all the basic algorithms using relevant
 
 - [Factorial](/1.%20Recursion/Factorial/Program.cs)
 
+- [Fibbonacci Sequence](/1.%20Recursion/Fibbonacci%20Sequence/Program.cs)
+
+- [Sum of 'N' Numbers](/1.%20Recursion/Sum-Of-N-Numbers/Program.cs)
+
 ### [2. Searching](/2.%20Searching/)
 
 - [Linear Search](/2.%20Searching/LinearSearch/Program.cs)
