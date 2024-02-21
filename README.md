@@ -1,6 +1,8 @@
-# Welcome to my Repository :two_hearts:
+# Welcome to My DSA Repository :two_hearts:
 
 This repository contains the C# code for all the basic algorithms using relevant Data Structures. :wink:
+
+Currently this repository is work in progress.
 
 ## Table of Contents:
 
@@ -17,3 +19,9 @@ This repository contains the C# code for all the basic algorithms using relevant
 - [Linear Search](/2.%20Searching/LinearSearch/Program.cs)
 
 - [Binary Search](/2.%20Searching/BinarySearch/Program.cs)
+
+### [3. Sorting](/3.%20Sorting/)
+
+- [Selection Sort](/3.%20Sorting/Selection%20Sort/Program.cs)
+
+- [Insertion Sort](/3.%20Sorting/Insertion%20Sort/Program.cs)
