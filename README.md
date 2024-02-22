@@ -25,3 +25,11 @@ Currently this repository is work in progress.
 - [Selection Sort](/3.%20Sorting/Selection%20Sort/Program.cs)
 
 - [Insertion Sort](/3.%20Sorting/Insertion%20Sort/Program.cs)
+
+- [Bubble Sort](/3.%20Sorting/Bubble%20Sort/Program.cs)
+
+- [Shell Sort](/3.%20Sorting/Shell%20Sort/Program.cs)
+
+- [Merge Sort](/3.%20Sorting/Merge%20Sort/Program.cs)
+
+- [Quick Sort](/3.%20Sorting/Quick%20Sort/Program.cs)
