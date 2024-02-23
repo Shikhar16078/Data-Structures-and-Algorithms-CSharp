@@ -16,8 +16,8 @@
     // Linked List Class
     internal class LinkedList
     {
-        private Node head;
-        private Node tail;
+        private Node ?head;
+        private Node ?tail;
         public int size;
 
         public LinkedList()
@@ -45,6 +45,46 @@
             return size == 0;
         }
 
+        public void AddFirst(int data)
+        {
+            Node n = new Node(data, null);
+            if (IsEmpty())
+            {
+                head = n;
+                tail = n;
+                size = 1;
+            }
+            else
+            {
+                n.next = head;
+                head = n;
+                size++;
+            }
+        }
+
+        public void Add(int data, int position)
+        {
+            if (position <= 0 || position >= size)
+            {
+                Console.WriteLine("Invalid Size");
+            }
+            else
+            {
+                Node iterator = head;
+                Node newest = new Node(data, null);
+                int counter = 1;
+                while (counter < position - 1)
+                {
+                    iterator = iterator.next;
+                    counter++;
+                }
+
+                newest.next = iterator.next;
+                iterator.next = newest;
+                size++;
+            }
+        }
+
         public void AddLast(int data)
         {
             Node n = new Node(data, null);
@@ -52,13 +92,91 @@
             {
                 head = n;
                 tail = n;
-                size++;
             }
             else
             {
                 tail.next = n;
                 tail = n;
-                size++;
+            }
+            size++;
+        }
+
+        public int DeleteFirst()
+        {
+            if (IsEmpty())
+            {
+                Console.WriteLine("List is Empty. Deletion cannot be performed.");
+                return -1;
+            }
+            else
+            {
+                Node toDelete = head;
+                head = head.next;
+                size--;
+                if (IsEmpty())
+                {
+                    tail = null;
+                }
+                return toDelete.data;
+            }
+        }
+
+        public int Delete(int position)
+        {
+            if (position <=0 || position >= size)
+            {
+                Console.WriteLine("Invalid position, deletion can not be performed.");
+                return -1;
+            }
+
+            if (position == 1)
+            {
+                Console.WriteLine("Okay, You want to delete at head, sure...");
+                return DeleteFirst();
+            }
+
+            Node previous = head;
+            Node toDelete = head;
+
+            int i = 1;
+            while(i < position - 1)
+            {
+                previous = previous.next;
+                i++;
+            }
+
+            toDelete = previous.next;
+            previous.next = previous.next.next;
+            size--;
+
+            return toDelete.data;
+        }
+
+        public int DeleteLast()
+        {
+            if (IsEmpty())
+            {
+                Console.WriteLine("List is Empty. Deletion cannot be performed.");
+                return -1;
+            }
+            else
+            {
+                Node toDelete = head;
+                Node previous = head;
+                while (toDelete.next != null)
+                {
+                    previous = toDelete;
+                    toDelete = toDelete.next;
+                }
+
+                previous.next = null;
+                tail = previous;
+                size--;
+                if (IsEmpty())
+                {
+                    tail = null;
+                }
+                return toDelete.data;
             }
         }
 
@@ -78,7 +196,7 @@
                     p = p.next;
                 }
             }
-            Console.WriteLine();
+            Console.WriteLine(); 
             return result;
         }
     }
