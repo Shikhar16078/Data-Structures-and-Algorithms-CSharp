@@ -33,3 +33,7 @@ Currently this repository is work in progress.
 - [Merge Sort](/3.%20Sorting/Merge%20Sort/Program.cs)
 
 - [Quick Sort](/3.%20Sorting/Quick%20Sort/Program.cs)
+
+### [4. Singly Linked List](/4.%20Singly%20Linked%20Lists/)
+
+- [LinkedList Class](/4.%20Singly%20Linked%20Lists/CRUD%20Linked%20List/Linked%20List.cs)

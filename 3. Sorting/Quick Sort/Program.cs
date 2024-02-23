@@ -4,6 +4,18 @@ namespace Quick_Sort
 {
     internal class Program
     {
+        // Determine the Pivot's sorted position,
+        // and then call Quick Sort on left and right arrays:
+        public static void QuickSort(int[] array, int low, int high)
+        {
+            if (low < high)
+            {
+                int index = Partition(array, low, high);
+                QuickSort(array, low, index - 1);
+                QuickSort(array, index + 1, high);
+            }
+        }
+
         // Sets the Pivot to its sorted position
         public static int Partition(int[] array, int low, int high)
         {
@@ -32,21 +44,13 @@ namespace Quick_Sort
             // Return the pivot index
             return j;
         }
+
+        // Spwan Method to Swap Elements in an Array
         public static void Swap(int[] array, int x, int y)
         {
             int temp = array[x];
             array[x] = array[y];
             array[y] = temp;
-        }
-
-        public static void QuickSort(int[] array, int low, int high)
-        {
-            if (low < high)
-            {
-                int index = Partition(array, low, high);
-                QuickSort(array, low, index - 1);
-                QuickSort(array, index + 1, high);
-            }
         }
 
         static void Main(string[] args)
