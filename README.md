@@ -34,10 +34,10 @@ Currently this repository is work in progress.
 
 - [Quick Sort](/3.%20Sorting/Quick%20Sort/Program.cs)
 
-### [4. Singly Linked List](/4.%20Singly%20Linked%20Lists/)
+### [4. Singly Linked List](/4.%20Linked%20Lists/)
 
-- [Linked List Class](/4.%20Singly%20Linked%20Lists/Linked%20List.cs)
+- [Linked List Class](/4.%20Linked%20Lists/1.%20Linked%20Lists/Linked%20List.cs)
 
-### [5. Circular Linked List](/5.%20Circular%20Linked%20Lists/)
+- [Circular Linked List Class](/4.%20Linked%20Lists/2.%20Circular%20Linked%20Lists/Linked%20List.cs)
 
-- [Circular Linked List Class](/5.%20Circular%20Linked%20Lists/Linked%20List.cs)
+- [Doubly Linked List Class](/4.%20Linked%20Lists/3.%20Doubly%20Linked%20Lists/Linked%20List.cs)

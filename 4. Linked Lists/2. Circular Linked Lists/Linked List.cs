@@ -105,35 +105,6 @@
             size++;
         }
 
-        //public void InsertSorted(int data)
-        //{
-        //    if (IsEmpty() || head.data > data)
-        //    {
-        //        AddFirst(data);
-        //        return;
-        //    }
-        //    else if(tail.data < data)
-        //    {
-        //        AddLast(data);
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        Node n = new Node(data, null);
-        //        Node iterator = head;
-        //        while (iterator.next != null)
-        //        {
-        //            if (iterator.data < data && iterator.next.data > data) {
-        //                n.next = iterator.next;
-        //                iterator.next = n;
-        //                size++;
-        //                return;
-        //            }
-        //            iterator = iterator.next;
-        //        }
-        //    }
-        //}
-
         public int DeleteFirst()
         {
             if (IsEmpty())
@@ -221,22 +192,6 @@
                 return toDelete.data;
             }
         }
-
-        //public int Search(int value)
-        //{
-        //    Node iterator = head;
-        //    int position = 1;
-        //    while (iterator != null) {
-        //        if (iterator.data == value)
-        //        {
-        //            return position;
-        //        }
-        //        iterator = iterator.next;
-        //        position++;
-        //    }
-        //    Console.WriteLine("Element not Found.");
-        //    return -1;
-        //}
 
         public override string ToString()
         {
