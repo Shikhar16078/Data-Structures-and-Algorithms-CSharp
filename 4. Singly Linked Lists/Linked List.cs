@@ -225,6 +225,28 @@
             return -1;
         }
 
+        // Reversing a Linked List
+        public void Reverse()
+        {
+            if (IsEmpty())
+            {
+                Console.WriteLine("Empty linked list can not be reversed.");
+                return;
+            }
+
+            Node previous = null;
+            Node current = head;
+
+            while(current != null)
+            {
+                Node next = current.next;
+                current.next = previous;
+                previous = current;
+                current = next;
+            }
+            head = previous;
+        }
+
         public override string ToString()
         {
             string result = string.Empty;
