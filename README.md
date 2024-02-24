@@ -36,4 +36,8 @@ Currently this repository is work in progress.
 
 ### [4. Singly Linked List](/4.%20Singly%20Linked%20Lists/)
 
-- [LinkedList Class](/4.%20Singly%20Linked%20Lists/CRUD%20Linked%20List/Linked%20List.cs)
+- [Linked List Class](/4.%20Singly%20Linked%20Lists/CRUD%20Linked%20List/Linked%20List.cs)
+
+### [5. Circular Linked List](/5.%20Circular%20Linked%20Lists/)
+
+- [Circular Linked List Class](/5.%20Circular%20Linked%20Lists/CRUD%20Circular%20Linked%20List/Linked%20List.cs)

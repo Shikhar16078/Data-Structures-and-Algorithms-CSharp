@@ -1,4 +1,4 @@
-﻿namespace CRUD_Linked_List
+﻿namespace CRUD_Circular_Linked_List
 {
     // Node Class
     class Node
@@ -31,6 +31,7 @@
         {
             Node node = new Node(data, null);
             head = node;
+            node.next = head;
             tail = node;
             size = 1;
         }
@@ -51,6 +52,7 @@
             if (IsEmpty())
             {
                 head = n;
+                n.next = n;
                 tail = n;
                 size = 1;
             }
@@ -58,6 +60,7 @@
             {
                 n.next = head;
                 head = n;
+                tail.next = n;
                 size++;
             }
         }
@@ -98,37 +101,38 @@
                 tail.next = n;
                 tail = n;
             }
+            tail.next = head;
             size++;
         }
 
-        public void InsertSorted(int data)
-        {
-            if (IsEmpty() || head.data > data)
-            {
-                AddFirst(data);
-                return;
-            }
-            else if(tail.data < data)
-            {
-                AddLast(data);
-                return;
-            }
-            else
-            {
-                Node n = new Node(data, null);
-                Node iterator = head;
-                while (iterator.next != null)
-                {
-                    if (iterator.data < data && iterator.next.data > data) {
-                        n.next = iterator.next;
-                        iterator.next = n;
-                        size++;
-                        return;
-                    }
-                    iterator = iterator.next;
-                }
-            }
-        }
+        //public void InsertSorted(int data)
+        //{
+        //    if (IsEmpty() || head.data > data)
+        //    {
+        //        AddFirst(data);
+        //        return;
+        //    }
+        //    else if(tail.data < data)
+        //    {
+        //        AddLast(data);
+        //        return;
+        //    }
+        //    else
+        //    {
+        //        Node n = new Node(data, null);
+        //        Node iterator = head;
+        //        while (iterator.next != null)
+        //        {
+        //            if (iterator.data < data && iterator.next.data > data) {
+        //                n.next = iterator.next;
+        //                iterator.next = n;
+        //                size++;
+        //                return;
+        //            }
+        //            iterator = iterator.next;
+        //        }
+        //    }
+        //}
 
         public int DeleteFirst()
         {
@@ -141,9 +145,11 @@
             {
                 Node toDelete = head;
                 head = head.next;
+                tail.next = head;
                 size--;
                 if (IsEmpty())
                 {
+                    head = null;
                     tail = null;
                 }
                 return toDelete.data;
@@ -152,7 +158,7 @@
 
         public int Delete(int position)
         {
-            if (position <=0 || position >= size)
+            if (position <= 0 || position > size)
             {
                 Console.WriteLine("Invalid position, deletion can not be performed.");
                 return -1;
@@ -164,11 +170,17 @@
                 return DeleteFirst();
             }
 
+            if (position == size)
+            {
+                Console.WriteLine("So you want to delete the last element, sure...");
+                return DeleteLast();
+            }
+
             Node previous = head;
             Node toDelete = head;
 
             int i = 1;
-            while(i < position - 1)
+            while (i < position - 1)
             {
                 previous = previous.next;
                 i++;
@@ -192,13 +204,14 @@
             {
                 Node toDelete = head;
                 Node previous = head;
-                while (toDelete.next != null)
+
+                do
                 {
                     previous = toDelete;
                     toDelete = toDelete.next;
-                }
+                } while (toDelete.next != head);
 
-                previous.next = null;
+                previous.next = head;
                 tail = previous;
                 size--;
                 if (IsEmpty())
@@ -209,21 +222,21 @@
             }
         }
 
-        public int Search(int value)
-        {
-            Node iterator = head;
-            int position = 1;
-            while (iterator != null) {
-                if (iterator.data == value)
-                {
-                    return position;
-                }
-                iterator = iterator.next;
-                position++;
-            }
-            Console.WriteLine("Element not Found.");
-            return -1;
-        }
+        //public int Search(int value)
+        //{
+        //    Node iterator = head;
+        //    int position = 1;
+        //    while (iterator != null) {
+        //        if (iterator.data == value)
+        //        {
+        //            return position;
+        //        }
+        //        iterator = iterator.next;
+        //        position++;
+        //    }
+        //    Console.WriteLine("Element not Found.");
+        //    return -1;
+        //}
 
         public override string ToString()
         {
@@ -235,11 +248,14 @@
             else
             {
                 Node p = head;
-                while (p != null)
-                {
+                result += "Head";
+                do {
                     result += $"-> {p.data} ";
                     p = p.next;
                 }
+                while (p != head);
+                result += "-> Back to Head";
+
             }
             Console.WriteLine(); 
             return result;

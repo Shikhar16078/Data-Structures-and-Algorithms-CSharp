@@ -1,4 +1,6 @@
-﻿namespace CRUD_Linked_List
+﻿using System;
+
+namespace CRUD_Linked_List
 {
     internal class Program
     {
@@ -36,12 +38,15 @@
 
             LinkedList list2 = new LinkedList();
             list2.AddLast(1);
-            list2.AddLast(2);
             list2.AddLast(3);
-            list2.AddLast(4);
+            list2.AddLast(5);
+            list2.AddLast(11);
             Console.WriteLine(list2);
+            Console.WriteLine($"\nCurrent size of the linked list is {list1.Length()}.");
 
-            Console.WriteLine(list2.Delete(1));
+            list2.InsertSorted(8);
+            Console.WriteLine(list2);
+            list2.InsertSorted(7);
             Console.WriteLine(list2);
         }
     }
