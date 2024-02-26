@@ -41,3 +41,5 @@ Currently this repository is work in progress.
 - [Circular Linked List Class](/4.%20Linked%20Lists/2.%20Circular%20Linked%20Lists/Linked%20List.cs)
 
 - [Doubly Linked List Class](/4.%20Linked%20Lists/3.%20Doubly%20Linked%20Lists/Linked%20List.cs)
+
+### [5. Binary Search Tree](/5.%20Trees/Binary%20Search%20Tree/BinarySearchTree.cs)
